@@ -1,0 +1,554 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Dynamic Locomotion Gait Optimization - Ayonga Hereid</title>
+
+
+
+
+<meta name="description" content="The focus of this project was on developing a computationally efficient and reliable gait synthesis algorithm that is scalable to high-dimensional (more than 20 DoF) humanoids.">
+
+
+
+
+<meta name="author" content="Ayonga Hereid">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ayonga Hereid">
+<meta property="og:title" content="Dynamic Locomotion Gait Optimization">
+
+
+  <link rel="canonical" href="https://ayonga.github.io/projects/hzd_optimization/">
+  <meta property="og:url" content="https://ayonga.github.io/projects/hzd_optimization/">
+
+
+
+  <meta property="og:description" content="The focus of this project was on developing a computationally efficient and reliable gait synthesis algorithm that is scalable to high-dimensional (more than 20 DoF) humanoids.">
+
+
+
+  <meta name="twitter:site" content="@ayonga">
+  <meta name="twitter:title" content="Dynamic Locomotion Gait Optimization">
+  <meta name="twitter:description" content="The focus of this project was on developing a computationally efficient and reliable gait synthesis algorithm that is scalable to high-dimensional (more than 20 DoF) humanoids.">
+  <meta name="twitter:url" content="https://ayonga.github.io/projects/hzd_optimization/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://ayonga.github.io/assets/images/durus-feature.png">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Ayonga Hereid">
+  
+
+
+
+
+
+  <meta property="og:image" content="https://ayonga.github.io/assets/images/durus-feature.png">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2016-12-30T00:00:00-05:00">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="google005d2b967a38e679" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ayonga.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ayonga Hereid Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ayonga.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<link rel="stylesheet" href="https://ayonga.github.io/assets/css/academicons.min.css">
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--project">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://ayonga.github.io/">Ayonga Hereid</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/index.html">Home</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/biography/">Biography</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/research/">Research</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/code/">Code</a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://ayonga.github.io/assets/images/ayonga_cropped.jpg" class="author__avatar" alt="Ayonga Hereid" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Ayonga Hereid</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Postdoctoral Research Fellow.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="Institution" itemscope itemtype="http://schema.org/Organization">
+          <i class="fa fa-fw fa-university" aria-hidden="true"></i> <span itemprop="name">University of Michigan</span>
+        </li>
+      
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:ayonga@umich.edu">
+            <meta itemprop="email" content="ayonga@umich.edu" />
+            <i class="fa fa-fw fa-envelope" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ayonga" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+<li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+        <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+</li>
+-->
+
+
+<li>
+  <a href="https://scholar.google.com/citations?user=Ul2F7OwAAAAJ" itemprop="sameAs">
+      <i class="ai ai-fw ai-google-scholar-square" aria-hidden="true"></i> Google Scholar
+  </a>
+</li>
+  
+
+
+
+
+<li itemprop="Resume" itemscope itemtype="http://schema.org/Person">
+    <a href="https://ayonga.github.io/pdf/cv.pdf">
+        <i class="fa fa-fw fa-file-pdf-o" aria-hidden="true"></i> <span itemprop="name">Curriculum Vitae</span>
+    </a>
+</li>
+
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Dynamic Locomotion Gait Optimization">
+    <meta itemprop="description" content="The focus of this project was on developing a computationally efficient and reliable gait synthesis algorithm that is scalable to high-dimensional (more than 20 DoF) humanoids.">
+    <meta itemprop="datePublished" content="December 30, 2016">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Dynamic Locomotion Gait Optimization
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <iframe width="960" height="480" src="https://www.youtube.com/embed/aL-B2eIoCK4" frameborder="0" allowfullscreen=""></iframe>
+
+<h3 id="abstract">Abstract</h3>
+
+<p class="text-justify">Due to its high degrees of freedom, planning dynamic motion that reconciles the
+full body dynamics of a full robot model such as DURUS has been largely
+prevented by a particular computational bottleneck: gait synthesis. The focus
+of my Ph.D. thesis was on developing a computationally efficient and reliable
+gait synthesis algorithm that is scalable to high-dimensional (more than 20
+DoF) humanoids. By decoupling the complex full-order dynamics constraints and
+exploiting the sparsity structure of the nonlinear optimization problem using
+direct collocation techniques, this novel framework provides a computationally
+efficient solution for generating provably stable dynamic locomotion for
+legged robots. The proposed method notably boosts the speed of the HZD gait
+synthesis problem by orders of two and significantly improves the reliability
+of existing methods. This work made fundamental contributions to the formal
+control methods by removing the limitations of the application of the HZD
+framework on high-dimensional humanoids.</p>
+
+<p class="text-justify"><img src="https://ayonga.github.io/assets/images/jacobian_v4.png" alt="image-right" class="align-right" />
+By eschewing the need for time-marching integration of system dynamics in favor
+of local algebraic constraints, this algorithm expresses all optimization
+constraints in closed-form mathematical formulations whose gradient can be
+obtained symbolically. By necessity, this algorithm also takes care in
+addressing the scalability of constraint expression sizes, which can quickly
+explode to intractable proportions. This is achieved via systematically
+introducing defect variables into the constraints to avoid symbolically
+`verbose’ operations to keep the resulting expressions simple. This novel
+formulation allows for computing the very sparse Jacobian matrix of constraints
+faster and with higher accuracy. All such components are critical in engineering
+fast and reliable optimization which synthesize dynamic gaits for humanoid
+robots.</p>
+
+
+
+<h3> Related Publications </h3>
+
+<ul class="bibliography" reversed="reversed"></ul>
+
+<ul class="bibliography" reversed="reversed"><li><section id="citation">
+    <!--
+         <a href="/newricelab/papers/Hereid20163D"><span id="Hereid20163D">A. Hereid, E. A. Cousineau, C. M. Hubicki, and A. D. Ames, 
+“<b>3D Dynamic Walking With Underactuated Humanoid Robots: A Direct Collocation Framework for Optimizing Hybrid Zero Dynamics</b>,” in <i>2016 IEEE International Conference on Robotics and Automation (ICRA)</i>, Stockholm, Sweden, 2016, pp. 1447–1454. </span>
+       -->
+        <!--
+             <div><span style="color: #7a8288;">Hereid, Ayonga and Cousineau, Eric A. and Hubicki, Christian M. and Ames, Aaron D.</span> </div>
+             <div>
+             <a href="/publications/Hereid20163D"><span style="color: #205081;">3D Dynamic Walking With Underactuated Humanoid Robots: A Direct Collocation Framework for Optimizing Hybrid Zero Dynamics</span></a>
+             </div>
+             <div>
+             <span style="color: #7a8288;">
+             In
+             
+             2016 IEEE International Conference on Robotics and Automation (ICRA)
+             
+             .
+             2016
+             </span>
+             </div>
+           -->
+    <div class="text-justify">
+        <span class="pub-item"><span id="Hereid20163D"><u>A. Hereid</u>, E. A. Cousineau, C. M. Hubicki, and A. D. Ames, 
+“<b>3D Dynamic Walking With Underactuated Humanoid Robots: A Direct Collocation Framework for Optimizing Hybrid Zero Dynamics</b>,” in <i>2016 IEEE International Conference on Robotics and Automation (ICRA)</i>, Stockholm, Sweden, 2016, pp. 1447–1454. </span></span>
+    </div>
+    
+
+    <span>
+        <a href="/publications/Hereid20163D"><button class="btn btn--facebook">Details</button></a>
+        
+        <a href="/pdf/Hereid20163D.pdf"><button class="btn btn--info">PDF</button></a>
+        
+        
+        
+        
+        <a href="http://doi.org/10.1109/ICRA.2016.7487279"><button class="btn btn--linkedin">DOI</button></a>
+        
+    </span>
+
+    <!--
+         <div>
+         [<a href="/publications/Hereid20163D">details</a>]
+         </div>
+       -->
+    <div>
+        
+        <b>
+            <span class="pub-award"><i class="fa fa-star-o" aria-hidden="true"></i> Best Paper Award Finalists</span>
+        </b>
+        
+    </div>
+    <hr style="height:1px;border-top:1px solid #D3D3D3" />
+</section>
+<a class="details" href="/publications/Hereid20163D.html"><!-- --></a></li></ul>
+
+<ul class="bibliography" reversed="reversed"><li><section id="citation">
+    <!--
+         <a href="/newricelab/papers/Hereid2015Hybrid"><span id="Hereid2015Hybrid">A. Hereid, C. Hubicki, E. A. Cousineau, J. W. Hurst, and A. D. Ames, 
+“<b>Hybrid Zero Dynamics based Multiple Shooting Optimization with Applications to Robotic Walking</b>,” in <i>2015 IEEE International Conference on Robotics and Automation (ICRA)</i>, Seattle, WA, USA, 2015, pp. 5734–5740. </span>
+       -->
+        <!--
+             <div><span style="color: #7a8288;">Hereid, Ayonga and Hubicki, Christian and Cousineau, Eric A. and Hurst, Jonathan W. and Ames, Aaron D.</span> </div>
+             <div>
+             <a href="/publications/Hereid2015Hybrid"><span style="color: #205081;">Hybrid Zero Dynamics based Multiple Shooting Optimization with Applications to Robotic Walking</span></a>
+             </div>
+             <div>
+             <span style="color: #7a8288;">
+             In
+             
+             2015 IEEE International Conference on Robotics and Automation (ICRA)
+             
+             .
+             2015
+             </span>
+             </div>
+           -->
+    <div class="text-justify">
+        <span class="pub-item"><span id="Hereid2015Hybrid"><u>A. Hereid</u>, C. Hubicki, E. A. Cousineau, J. W. Hurst, and A. D. Ames, 
+“<b>Hybrid Zero Dynamics based Multiple Shooting Optimization with Applications to Robotic Walking</b>,” in <i>2015 IEEE International Conference on Robotics and Automation (ICRA)</i>, Seattle, WA, USA, 2015, pp. 5734–5740. </span></span>
+    </div>
+    
+
+    <span>
+        <a href="/publications/Hereid2015Hybrid"><button class="btn btn--facebook">Details</button></a>
+        
+        <a href="/pdf/Hereid2015Hybrid.pdf"><button class="btn btn--info">PDF</button></a>
+        
+        
+        
+        
+        <a href="http://doi.org/10.1109/ICRA.2015.7140002"><button class="btn btn--linkedin">DOI</button></a>
+        
+    </span>
+
+    <!--
+         <div>
+         [<a href="/publications/Hereid2015Hybrid">details</a>]
+         </div>
+       -->
+    <div>
+        
+    </div>
+    <hr style="height:1px;border-top:1px solid #D3D3D3" />
+</section>
+<a class="details" href="/publications/Hereid2015Hybrid.html"><!-- --></a></li></ul>
+
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-12-30T00:00:00-05:00">December 30, 2016</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="https://ayonga.github.io/projects/adaptive_planning/" class="pagination--pager" title="Online Adaptive Motion Planning for Bipeds
+">Previous</a>
+    
+    
+      <a href="https://ayonga.github.io/projects/exoskeleton/" class="pagination--pager" title="Exoskeleton
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/ayonga"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+      <li><a href="http://github.com/ayonga"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://ayonga.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Ayonga Hereid. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://ayonga.github.io/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104404898-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+  </body>
+</html>

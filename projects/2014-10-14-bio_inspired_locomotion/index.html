@@ -1,0 +1,554 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Dynamic Legged Locomotion via Formal Control Methods - Ayonga Hereid</title>
+
+
+
+
+<meta name="description" content="Utilize formal control methods to realize dynamic walking on highly underactuated bipeds.">
+
+
+
+
+<meta name="author" content="Ayonga Hereid">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ayonga Hereid">
+<meta property="og:title" content="Dynamic Legged Locomotion via Formal Control Methods">
+
+
+  <link rel="canonical" href="https://ayonga.github.io/projects/2014-10-14-bio_inspired_locomotion/">
+  <meta property="og:url" content="https://ayonga.github.io/projects/2014-10-14-bio_inspired_locomotion/">
+
+
+
+  <meta property="og:description" content="Utilize formal control methods to realize dynamic walking on highly underactuated bipeds.">
+
+
+
+  <meta name="twitter:site" content="@ayonga">
+  <meta name="twitter:title" content="Dynamic Legged Locomotion via Formal Control Methods">
+  <meta name="twitter:description" content="Utilize formal control methods to realize dynamic walking on highly underactuated bipeds.">
+  <meta name="twitter:url" content="https://ayonga.github.io/projects/2014-10-14-bio_inspired_locomotion/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://ayonga.github.io/assets/images/atrias.png">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Ayonga Hereid">
+  
+
+
+
+
+
+  <meta property="og:image" content="https://ayonga.github.io/assets/images/atrias.png">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2014-10-18T00:00:00-04:00">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="google005d2b967a38e679" />
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ayonga.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ayonga Hereid Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ayonga.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<link rel="stylesheet" href="https://ayonga.github.io/assets/css/academicons.min.css">
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--project">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://ayonga.github.io/">Ayonga Hereid</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/index.html">Home</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/biography/">Biography</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/publications/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/research/">Research</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ayonga.github.io/code/">Code</a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://ayonga.github.io/assets/images/ayonga_cropped.jpg" class="author__avatar" alt="Ayonga Hereid" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Ayonga Hereid</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Postdoctoral Research Fellow.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="Institution" itemscope itemtype="http://schema.org/Organization">
+          <i class="fa fa-fw fa-university" aria-hidden="true"></i> <span itemprop="name">University of Michigan</span>
+        </li>
+      
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:ayonga@umich.edu">
+            <meta itemprop="email" content="ayonga@umich.edu" />
+            <i class="fa fa-fw fa-envelope" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ayonga" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+<li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+        <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+</li>
+-->
+
+
+<li>
+  <a href="https://scholar.google.com/citations?user=Ul2F7OwAAAAJ" itemprop="sameAs">
+      <i class="ai ai-fw ai-google-scholar-square" aria-hidden="true"></i> Google Scholar
+  </a>
+</li>
+  
+
+
+
+
+<li itemprop="Resume" itemscope itemtype="http://schema.org/Person">
+    <a href="https://ayonga.github.io/pdf/cv.pdf">
+        <i class="fa fa-fw fa-file-pdf-o" aria-hidden="true"></i> <span itemprop="name">Curriculum Vitae</span>
+    </a>
+</li>
+
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Dynamic Legged Locomotion via Formal Control Methods">
+    <meta itemprop="description" content="Utilize formal control methods to realize dynamic walking on highly underactuated bipeds.">
+    <meta itemprop="datePublished" content="October 18, 2014">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Dynamic Legged Locomotion via Formal Control Methods
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <iframe width="480" height="240" src="https://www.youtube.com/embed/yiEbWwC-sR0" frameborder="0" allowfullscreen=""></iframe>
+<!-- <iframe width="480" height="240" src="https://www.youtube.com/embed/3I6YtCxt-UA" frameborder="0" allowfullscreen></iframe> -->
+
+<h2 id="abstract">Abstract</h2>
+
+<p class="align-right"><img src="https://ayonga.github.io/assets/images/atrias-slip-walk-v2.png" alt="image-right" /></p>
+<p class="text-justify">Humans and other legged animals are able to walk with exceptional
+ease and efficiency by utilizing the presence of elasticity in their
+joints. While such compliance elements are ruled out in many robotic designs and
+control algorithms, I seek to develop formal control methods that exploit the
+passive dynamics of the system to achieve natural and efficient bio-inspired
+locomotion on legged robots. This work is conducted on a highly underactuated
+bipedal robot, ATRIAS. By extending the existing hybrid zero dynamics (HZD) control
+framework to systems with high degrees of underactuation, I experimentally
+realized robust and sustainable walking on ATRIAS that closely emulates the
+essential concept of walking and running behaviors observed in many animals,
+from quail to kangaroos, and humans. To tackle the difficulty of the kinematic
+trajectory optimization problem in our previous approach, I further developed a
+novel trajectory-free dynamic shaping controller built upon the QP-based control
+Lyapunov functions (CLFs) to achieve formally stable locomotion that
+encapsulates the essential dynamics of bio-inspired reduced order model. These
+works effectively extended the applications of formal control
+methods to an analytically tricky domain of highly-underactuated robots.</p>
+
+<figure class="">
+  <img src="https://ayonga.github.io/assets/images/spring_loaded_inverted_pendulum1.png" alt="SLIP" />
+  
+    <figcaption>Emulate SLIP (spring-loaded inverted pendulum) dynamics on bipedal robot via Multi-Objective Control Lyapunov Functions (CLF).
+</figcaption>
+  
+</figure>
+
+
+
+
+<h3> Related Publications </h3>
+
+<ul class="bibliography" reversed="reversed"><li><section id="citation">
+    <!--
+         <a href="/newricelab/papers/Hereid2014Dynamic"><span id="Hereid2014Dynamic">A. Hereid, S. Kolathaya, M. S. Jones, J. Van Why, J. W. Hurst, and A. D. Ames, 
+“<b>Dynamic Multi-domain Bipedal Walking with Atrias Through SLIP Based Human-inspired Control</b>,” in <i>17th International Conference on Hybrid Systems: Computation and Control (HSCC’14)</i>, Berlin, Germany, 2014, pp. 263–272. </span>
+       -->
+        <!--
+             <div><span style="color: #7a8288;">Hereid, Ayonga and Kolathaya, Shishir and Jones, Mikhail S. and Van Why, Johnathan and Hurst, Jonathan W. and Ames, Aaron D.</span> </div>
+             <div>
+             <a href="/publications/Hereid2014Dynamic"><span style="color: #205081;">Dynamic Multi-domain Bipedal Walking with Atrias Through SLIP Based Human-inspired Control</span></a>
+             </div>
+             <div>
+             <span style="color: #7a8288;">
+             In
+             
+             17th International Conference on Hybrid Systems: Computation and Control (HSCC’14)
+             
+             .
+             2014
+             </span>
+             </div>
+           -->
+    <div class="text-justify">
+        <span class="pub-item"><span id="Hereid2014Dynamic"><u>A. Hereid</u>, S. Kolathaya, M. S. Jones, J. Van Why, J. W. Hurst, and A. D. Ames, 
+“<b>Dynamic Multi-domain Bipedal Walking with Atrias Through SLIP Based Human-inspired Control</b>,” in <i>17th International Conference on Hybrid Systems: Computation and Control (HSCC’14)</i>, Berlin, Germany, 2014, pp. 263–272. </span></span>
+    </div>
+    
+
+    <span>
+        <a href="/publications/Hereid2014Dynamic"><button class="btn btn--facebook">Details</button></a>
+        
+        <a href="/pdf/Hereid2014Dynamic.pdf"><button class="btn btn--info">PDF</button></a>
+        
+        
+        
+        <a href="http://doi.acm.org/10.1145/2562059.2562143"><button class="btn btn--twitter">Link</button></a>
+        
+        
+        <a href="http://doi.org/10.1145/2562059.2562143"><button class="btn btn--linkedin">DOI</button></a>
+        
+    </span>
+
+    <!--
+         <div>
+         [<a href="/publications/Hereid2014Dynamic">details</a>]
+         </div>
+       -->
+    <div>
+        
+        <b>
+            <span class="pub-award"><i class="fa fa-star-o" aria-hidden="true"></i> DENSO Best Student Paper Award</span>
+        </b>
+        
+    </div>
+    <hr style="height:1px;border-top:1px solid #D3D3D3" />
+</section>
+<a class="details" href="/publications/Hereid2014Dynamic.html"><!-- --></a></li></ul>
+
+<ul class="bibliography" reversed="reversed"><li><section id="citation">
+    <!--
+         <a href="/newricelab/papers/Hereid2014Embedding"><span id="Hereid2014Embedding">A. Hereid, M. J. Powell, and A. D. Ames, 
+“<b>Embedding of SLIP Dynamics on Underactuated Bipedal Robots Through Multi-Objective Quadratic Program based Control</b>,” in <i>2014 IEEE 53rd Annual Conference on Decision and Control (CDC)</i>, Los Angeles, CA, USA, 2014, pp. 2950–2957. </span>
+       -->
+        <!--
+             <div><span style="color: #7a8288;">Hereid, Ayonga and Powell, Matthew J. and Ames, Aaron D.</span> </div>
+             <div>
+             <a href="/publications/Hereid2014Embedding"><span style="color: #205081;">Embedding of SLIP Dynamics on Underactuated Bipedal Robots Through Multi-Objective Quadratic Program based Control</span></a>
+             </div>
+             <div>
+             <span style="color: #7a8288;">
+             In
+             
+             2014 IEEE 53rd Annual Conference on Decision and Control (CDC)
+             
+             .
+             2014
+             </span>
+             </div>
+           -->
+    <div class="text-justify">
+        <span class="pub-item"><span id="Hereid2014Embedding"><u>A. Hereid</u>, M. J. Powell, and A. D. Ames, 
+“<b>Embedding of SLIP Dynamics on Underactuated Bipedal Robots Through Multi-Objective Quadratic Program based Control</b>,” in <i>2014 IEEE 53rd Annual Conference on Decision and Control (CDC)</i>, Los Angeles, CA, USA, 2014, pp. 2950–2957. </span></span>
+    </div>
+    
+
+    <span>
+        <a href="/publications/Hereid2014Embedding"><button class="btn btn--facebook">Details</button></a>
+        
+        <a href="/pdf/Hereid2014Embedding.pdf"><button class="btn btn--info">PDF</button></a>
+        
+        
+        
+        
+        <a href="http://doi.org/10.1109/CDC.2014.7039843"><button class="btn btn--linkedin">DOI</button></a>
+        
+    </span>
+
+    <!--
+         <div>
+         [<a href="/publications/Hereid2014Embedding">details</a>]
+         </div>
+       -->
+    <div>
+        
+    </div>
+    <hr style="height:1px;border-top:1px solid #D3D3D3" />
+</section>
+<a class="details" href="/publications/Hereid2014Embedding.html"><!-- --></a></li></ul>
+
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-10-18T00:00:00-04:00">October 18, 2014</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="https://ayonga.github.io/projects/2010-07-21-mlvds/" class="pagination--pager" title="Networked Instrument Bus Protocol
+">Previous</a>
+    
+    
+      <a href="https://ayonga.github.io/projects/2015-06-06-drc/" class="pagination--pager" title="Energy Efficient Locomotion at DARPA Robotic Challenges (DRC)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/ayonga"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+      <li><a href="http://github.com/ayonga"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://ayonga.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Ayonga Hereid. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://ayonga.github.io/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104404898-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+  </body>
+</html>
